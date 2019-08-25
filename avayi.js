@@ -1,10 +1,29 @@
-
 var car = document.getElementById("player");
-
 var e = document.querySelectorAll(".up");
 var f = document.querySelectorAll(".down");
+var score=document.querySelector(".score");
+var no=document.querySelector(".no");
+var star=document.querySelectorAll(".star");
+car.style.background="yellow";
+score.style.color="white";
+score.textContent="SCORE :";
+no.style.color="white";
 
+ 
+for(var i=0;i<star.length;i++)
+{
+	star[i].style.background="blue";
+}
 
+for(var i=0;i<e.length;i++)
+{
+	e[i].style.background="red";
+}
+
+for(var j=0;j<f.length;j++)
+{
+	f[j].style.background="green";
+}
 
 // code for upper movement of blocks
 
@@ -14,9 +33,9 @@ setInterval(function(){
     var eLeftPos = e[i].offsetTop;
     var d=(eLeftPos + s)
     e[i].style.top =  d  + 'px';
-    if(d>600)
+    if(d>540)
     {
-    	e[i].style.top= "0px";
+    	e[i].style.top= "20px";
     }
      
                     
@@ -30,9 +49,9 @@ setInterval(function(){
     var posi = f[i].offsetTop;
     var d=(posi - s)
     f[i].style.top =  d  + 'px';
-    if(d<0)
+    if(d<20)
     {
-    	f[i].style.top= "600px";
+    	f[i].style.top= "540px";
     }
    
 }
@@ -92,10 +111,13 @@ setInterval(function(){
                      } 
                        
              }
-         });            
+         });   
+       
+       var  v=0;
+                  
 			      setInterval(function(){
 			    	
-				for(i=0;i<f.length;i++)
+				for(var i=0;i<f.length;i++)
       			{		var x=car.offsetLeft;     /*cars left position*/                              
 	  			        var t=car.offsetTop;     /*cars upper position*/
 					    var y=f[i].offsetLeft;      /* obsticals left  position*/
@@ -114,38 +136,19 @@ setInterval(function(){
                          
                      } 
                        
-             }
-         });
-            
-// var s = 5;            
-// setInterval(function(){
-// 	for(var i=0;i<e.length;i++){
-//     var eLeftPos = e[i].offsetTop;
-//     var d=(eLeftPos + s)
-//     e[i].style.top =  d  + 'px';
-//     if(d>600)
-//     {
-//     	e[i].style.top= "0px";
-//     }
-//      // if(e.[i].offsetTop==car.offsetTop)
-//      //             {
-//      //             	alert("bhai tuch ho gaya");
-//      //             }
-                    
-// }
-// }, 10);
+              }        
+             
+                  for(var i=0;i<star.length;i++)
+                  {
+                  	if((bl<=star[i].offsetLeft && star[i].offsetLeft<=br)&&(bt<=star[i].offsetTop && star[i].offsetTop<=bb))
+                  	{
+                        v=v+5;
+                        star[i].style.display="none";                      	
+                      
+                  	}
+                  }
+                      no.textContent=v;
+                 
 
-// //code foe lower movement of blocks
-
-// setInterval(function(){
-// 	for(var i=0;i<f.length;i++){
-//     var posi = f[i].offsetTop;
-//     var d=(posi - s)
-//     f[i].style.top =  d  + 'px';
-//     if(d<0)
-//     {
-//     	f[i].style.top= "600px";
-//     }
-// }
-// }, 10);
-
+         });       
+              

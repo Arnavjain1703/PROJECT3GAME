@@ -1,19 +1,22 @@
-
-      #player {
+  #player {
         position: absolute;
         top: 300px;
         left: 50px;
-        background: #FC0;
+      
         width: 40px;
         height: 40px;
         border-radius: 50%;
     }
-      
 
+  .star {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+           }
     
    .up {
         position: absolute;
-        background: red;
         width: 30px;
         height: 50px;
         animation: move 5s infinite;
@@ -21,7 +24,6 @@
     }  
    .down {
         position: absolute;
-        background: green;
         width: 30px;
         height: 50px;
         animation: up 5s infinite;
