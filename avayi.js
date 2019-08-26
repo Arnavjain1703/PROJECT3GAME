@@ -1,23 +1,54 @@
 var e;
 var f;
 var star;
+var x;
+
+
+function easy()
+{
+	x=400;
+	startGame();
+
+
+}
+
+
+
+function medium(){
+
+
+   x=300;
+   startGame()
+	// body...
+}
+
+
+function hard() {
+
+x=100;
+startGame()
+	
+}
 function startGame(){
 	var body="document.get"
-	var but = document.getElementById("but");
-	but.style.display="none";
+	var but = document.querySelectorAll(".but");
+	but[0].style.display="none";
+	but[1].style.display="none";
+	but[2].style.display="none";
 var car = document.getElementById("player");
  e = document.querySelectorAll(".up");
  f = document.querySelectorAll(".down");
 var score=document.querySelector(".score");
 var no=document.querySelector(".no");
  star=document.querySelectorAll(".star");
- var lost=document.querySelector(".lost");
+ var lost=document.querySelectorAll(".lost");
  var get=document.querySelector(".get");
  var body=document.querySelector("body");
  var win=document.querySelector(".win")
 car.style.background="yellow";
 score.style.color="white";
-lost.style.display="none"
+lost[0].style.display="none";
+lost[1].style.display="none";
 score.textContent="SCORE :";
 no.style.color="white";
 
@@ -53,7 +84,7 @@ setInterval(function(){
      
                     
 }
-}, 100);
+}, x);
 
 //code for lower movement of blocks
 
@@ -68,7 +99,7 @@ setInterval(function(){
     }
    
 }
-}, 100);
+}, x);
 
  
 
