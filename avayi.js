@@ -2,12 +2,16 @@ var e;
 var f;
 var star;
 var x;
-
+var y;
+var lev=document.querySelectorAll(".lev");
 
 function easy()
 {
-	x=400;
-	startGame();
+	x=100;
+	y=70;
+	audio2()
+	startGame()
+	
 
 
 }
@@ -17,7 +21,9 @@ function easy()
 function medium(){
 
 
-   x=300;
+   x=60;
+   y=40;
+   audio3()
    startGame()
 	// body...
 }
@@ -25,7 +31,9 @@ function medium(){
 
 function hard() {
 
-x=100;
+x=50;
+y=30;
+audio4()
 startGame()
 	
 }
@@ -46,6 +54,8 @@ var no=document.querySelector(".no");
  var body=document.querySelector("body");
  var win=document.querySelector(".win")
  var value=document.querySelector(".value");
+ var bell=document.querySelector(".bell");
+
 car.style.background="yellow";
 lost[0].style.display="none";
 lost[1].style.display="none";
@@ -77,7 +87,7 @@ setInterval(function(){
     var eLeftPos = e[i].offsetTop;
     var d=(eLeftPos + s)
     e[i].style.top =  d  + 'px';
-    if(d>540)
+    if(d>500)
     {
     	e[i].style.top= "20px";
     }
@@ -95,11 +105,11 @@ setInterval(function(){
     f[i].style.top =  d  + 'px';
     if(d<20)
     {
-    	f[i].style.top= "540px";
+    	f[i].style.top= "500px";
     }
    
 }
-}, x);
+}, y);
 
  
 
@@ -118,7 +128,7 @@ setInterval(function(){
 				{
 					car.style.left = (car.offsetLeft -= 5) + 'px';
 				}	
-			if((key.keyCode=="40")&&(car.offsetTop<=550))
+			if((key.keyCode=="40")&&(car.offsetTop<=510))
 				{
 					 car.style.top = (car.offsetTop += 5) + 'px';
 				}
@@ -150,10 +160,13 @@ setInterval(function(){
 				     var bb=t+20;        /* balls bottom part*/
                      if(((l<=x && x<=r)||(l<=bl && bl<=r)||(l<=br && br<=r))&&((ot<=bb && bb<=b)||(ot<=bt && bt<=b)||(ot<=t && t<=b)))
                      {   
-                        car.style.background="blue";
+
+                     	audio5();
                         get[0].style.display="block";
                         get[1].style.display="block";
                         car.style.opacity="0";
+                        score.style.display="none";
+                        no.style.display="none";
                         hide();
 					 
 					 }
@@ -180,11 +193,13 @@ setInterval(function(){
 				     var bt=t-20;        /*balls top part*/
 				     var bb=t+20;        /* balls bottom part*/
                      if(((l<=x && x<=r)||(l<=bl && bl<=r)||(l<=br && br<=r))&&((ot<=bb && bb<=b)||(ot<=bt && bt<=b)||(ot<=t && t<=b)))
-                     {   
+                     {   audio5();
                         car.style.opacity="0";
+
                            get[0].style.display="block";
                            get[1].style.display="block";
-                       
+                           score.style.display="none";
+                        no.style.display="none";
 						hide();
                      } 
                        
@@ -193,7 +208,7 @@ setInterval(function(){
                   for(var i=0;i<star.length;i++)
                   {
                   	if((bl<=star[i].offsetLeft && star[i].offsetLeft<=br)&&(bt<=star[i].offsetTop && star[i].offsetTop<=bb))
-                  	{
+                  	{    audio1();
                         v=v+5;
                         star[i].style.display="none";                      	
                       
@@ -206,11 +221,15 @@ setInterval(function(){
                       { win.style.display="block";
                          get[1].style.display="block";
                          car.style.opacity="0";
-                    
+                         score.style.display="none";
+                        no.style.display="none";
                       	hide();
                       }
 
-                 
+          function audio1()
+          {
+          	bell.play()
+          }       
 
          });       
 
@@ -236,3 +255,26 @@ setInterval(function(){
 
 
 			}
+
+
+          function audio2()
+          {
+          	lev[0].play()
+          }   
+
+          function audio3()
+          {
+          	lev[1].play();
+          }
+          function audio4()
+          {
+          	lev[2].play();
+          }
+
+          function audio5()
+          {
+          	lev[3].play();
+          }
+
+        
+          
