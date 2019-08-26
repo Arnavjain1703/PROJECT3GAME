@@ -42,15 +42,15 @@ var score=document.querySelector(".score");
 var no=document.querySelector(".no");
  star=document.querySelectorAll(".star");
  var lost=document.querySelectorAll(".lost");
- var get=document.querySelector(".get");
+ var get=document.querySelectorAll(".get");
  var body=document.querySelector("body");
  var win=document.querySelector(".win")
+ var value=document.querySelector(".value");
 car.style.background="yellow";
-score.style.color="white";
 lost[0].style.display="none";
 lost[1].style.display="none";
 score.textContent="SCORE :";
-no.style.color="white";
+
 
 
  
@@ -122,7 +122,7 @@ setInterval(function(){
 				{
 					 car.style.top = (car.offsetTop += 5) + 'px';
 				}
-			if((key.keyCode=="38")&&(car.offsetTop>=0))
+			if((key.keyCode=="38")&&(car.offsetTop>=10))
 				{
 					car.style.top = (car.offsetTop -= 5) + 'px';
 		
@@ -151,7 +151,9 @@ setInterval(function(){
                      if(((l<=x && x<=r)||(l<=bl && bl<=r)||(l<=br && br<=r))&&((ot<=bb && bb<=b)||(ot<=bt && bt<=b)||(ot<=t && t<=b)))
                      {   
                         car.style.background="blue";
-                        get.style.display="block";
+                        get[0].style.display="block";
+                        get[1].style.display="block";
+                        car.style.opacity="0";
                         hide();
 					 
 					 }
@@ -160,6 +162,7 @@ setInterval(function(){
          });   
        
        var  v=0;
+
                   
 			      setInterval(function(){
 			    	
@@ -178,8 +181,9 @@ setInterval(function(){
 				     var bb=t+20;        /* balls bottom part*/
                      if(((l<=x && x<=r)||(l<=bl && bl<=r)||(l<=br && br<=r))&&((ot<=bb && bb<=b)||(ot<=bt && bt<=b)||(ot<=t && t<=b)))
                      {   
-                        car.style.background="blue";
-                           get.style.display="block";
+                        car.style.opacity="0";
+                           get[0].style.display="block";
+                           get[1].style.display="block";
                        
 						hide();
                      } 
@@ -196,10 +200,16 @@ setInterval(function(){
                   	}
                   }
                       no.textContent=v;
-                      if(v==80)
+                      value.textContent=v;
+                      
+                      if(1140 <=car.offsetLeft)
                       { win.style.display="block";
-                      	
+                         get[1].style.display="block";
+                         car.style.opacity="0";
+                    
+                      	hide();
                       }
+
                  
 
          });       

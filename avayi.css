@@ -65,3 +65,7 @@ body{
    border:blue solid 2px; 
 
 }
+.score , .no
+{  color:#1DEDDD;
+   font-size: 30px;
+}
