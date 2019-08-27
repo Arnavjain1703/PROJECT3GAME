@@ -5,6 +5,7 @@ var x;
 var y;
 var lev=document.querySelectorAll(".lev");
 var grass=document.querySelectorAll(".grass");
+var finish =document.querySelector(".finish");
 
 function easy()
 {
@@ -65,9 +66,11 @@ var no=document.querySelector(".no");
 car.style.background="yellow";
 lost[0].style.display="none";
 lost[1].style.display="none";
+finish.style.display="block"
 score.textContent="SCORE :";
 car.style.opacity="1";
 body.style.background="black";
+finish.style.display="block";
 for(var i=0;i<e.length;i++)
 {
 	e[i].style.display="block";
@@ -174,6 +177,7 @@ setInterval(function(){
                         car.style.opacity="0";
                         score.style.display="none";
                         no.style.display="none";
+                        finish.style.display="none";
                         gra();
 
                         hide();
@@ -204,8 +208,9 @@ setInterval(function(){
                      if(((l<=x && x<=r)||(l<=bl && bl<=r)||(l<=br && br<=r))&&((ot<=bb && bb<=b)||(ot<=bt && bt<=b)||(ot<=t && t<=b)))
                       {   audio5();
                         car.style.opacity="0";
-                          
-                          
+                           get[0].style.display="block";
+                        get[1].style.display="block";
+                          finish.style.display="none";
                            score.style.display="none";
                         no.style.display="none";
                         gra();
@@ -219,6 +224,7 @@ setInterval(function(){
                   	if((bl<=star[i].offsetLeft && star[i].offsetLeft<=br)&&(bt<=star[i].offsetTop && star[i].offsetTop<=bb))
                   	{    audio1();
                         v=v+5;
+                        finish.style.display="none";
                         star[i].style.display="none";                      	
                       
                    	}
@@ -233,7 +239,7 @@ setInterval(function(){
                       no.textContent=v;
                       value.textContent=v;
                       
-                      if(1140 <=car.offsetLeft)
+                      if(1195 <=car.offsetLeft)
                       { win.style.display="block";
                          get[1].style.display="block";
                          car.style.opacity="0";
