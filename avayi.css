@@ -8,7 +8,7 @@ body{
 
 
 #player {
-    position: absolute;
+    position:absolute;
     top: 250px;
     left: 30px;
   
@@ -49,27 +49,8 @@ body{
   
 
 
-  /*.starth1{
-    font-size: 100px;
-    text-shadow: 4px 4px  red;
-    color:#185ED9;
-  }*/
-/*  .starth1{
-    font-size: 100px;
-    color:rgb(250, 19, 69);
-    border:3px dashed yellow;
-    box-shadow: 2px 2px 10px orangered;
-    text-shadow: 1px 1px black;
-    font-family:'Segoe UI';
-  }
 
-  .starth2{
-    font-size: 80px;
-    text-shadow: 2px 2px black;
-    font-family: 'Courier New', Courier, monospace;
-    color:white;
-  }
-*/
+
 .starth1{
   font-size: 100px;
   color:rgb(250, 19, 69);

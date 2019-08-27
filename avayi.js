@@ -42,7 +42,7 @@ startGame()
 	
 }
 function startGame(){
-	var body="document.get"
+	
 	var but = document.querySelectorAll(".but");
 	but[0].style.display="none";
 	but[1].style.display="none";
@@ -66,10 +66,9 @@ var no=document.querySelector(".no");
  	grass[i].style.display="block";
  }
 // body.style.background="white";
-car.style.background="yellow";
 lost[0].style.display="none";
 lost[1].style.display="none";
-finish.style.display="block"
+
 score.textContent="SCORE :";
 car.style.opacity="1";
 body.style.background="black";
@@ -173,7 +172,7 @@ setInterval(function(){
 				     var bb=t+20;        /* balls bottom part*/
                      if(((l<=x && x<=r)||(l<=bl && bl<=r)||(l<=br && br<=r))&&((ot<=bb && bb<=b)||(ot<=bt && bt<=b)||(ot<=t && t<=b)))
                      {   
-                        grass[0].style.display="none";
+                       
                      	audio5();
                         get[0].style.display="block";
                         get[1].style.display="block";
