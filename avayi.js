@@ -4,6 +4,7 @@ var star;
 var x;
 var y;
 var lev=document.querySelectorAll(".lev");
+var grass=document.querySelectorAll(".grass");
 
 function easy()
 {
@@ -55,29 +56,35 @@ var no=document.querySelector(".no");
  var win=document.querySelector(".win")
  var value=document.querySelector(".value");
  var bell=document.querySelector(".bell");
-
+ 
+ for(i=0;i<grass.length;i++)
+ {
+ 	grass[i].style.display="block";
+ }
+// body.style.background="white";
 car.style.background="yellow";
 lost[0].style.display="none";
 lost[1].style.display="none";
 score.textContent="SCORE :";
-
+car.style.opacity="1";
+body.style.background="black";
+for(var i=0;i<e.length;i++)
+{
+	e[i].style.display="block";
+	e[i].style.background="red";
+}
+for(var i=0;i<f.length;i++)
+{  
+	f[i].style.display="block";
+	
+}
+ for(var i=0;i<star.length;i++)
+ {
+ 	star[i].style.display="block";
+ }
 
 
  
-for(var i=0;i<star.length;i++)
-{
-	star[i].style.background="blue";
-}
-
-for(var i=0;i<e.length;i++)
-{
-	e[i].style.background="red";
-}
-
-for(var j=0;j<f.length;j++)
-{
-	f[j].style.background="green";
-}
 
 // code for upper movement of blocks
 
@@ -94,7 +101,7 @@ setInterval(function(){
      
                     
 }
-}, x);
+},x );
 
 //code for lower movement of blocks
 
@@ -160,13 +167,15 @@ setInterval(function(){
 				     var bb=t+20;        /* balls bottom part*/
                      if(((l<=x && x<=r)||(l<=bl && bl<=r)||(l<=br && br<=r))&&((ot<=bb && bb<=b)||(ot<=bt && bt<=b)||(ot<=t && t<=b)))
                      {   
-
+                        grass[0].style.display="none";
                      	audio5();
                         get[0].style.display="block";
                         get[1].style.display="block";
                         car.style.opacity="0";
                         score.style.display="none";
                         no.style.display="none";
+                        gra();
+
                         hide();
 					 
 					 }
@@ -193,13 +202,13 @@ setInterval(function(){
 				     var bt=t-20;        /*balls top part*/
 				     var bb=t+20;        /* balls bottom part*/
                      if(((l<=x && x<=r)||(l<=bl && bl<=r)||(l<=br && br<=r))&&((ot<=bb && bb<=b)||(ot<=bt && bt<=b)||(ot<=t && t<=b)))
-                     {   audio5();
+                      {   audio5();
                         car.style.opacity="0";
-
-                           get[0].style.display="block";
-                           get[1].style.display="block";
+                          
+                          
                            score.style.display="none";
                         no.style.display="none";
+                        gra();
 						hide();
                      } 
                        
@@ -212,7 +221,14 @@ setInterval(function(){
                         v=v+5;
                         star[i].style.display="none";                      	
                       
-                  	}
+                   	}
+                        	                       
+                       	
+                       	
+
+                       
+                   
+
                   }
                       no.textContent=v;
                       value.textContent=v;
@@ -223,6 +239,7 @@ setInterval(function(){
                          car.style.opacity="0";
                          score.style.display="none";
                         no.style.display="none";
+                        gra();
                       	hide();
                       }
 
@@ -277,4 +294,10 @@ setInterval(function(){
           }
 
         
-          
+          function gra()
+          {
+          	for(i=0;i<grass.length;i++)
+          	{
+          		grass[i].style.display="none";
+          	}
+          }
