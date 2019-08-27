@@ -6,6 +6,8 @@ var y;
 var lev=document.querySelectorAll(".lev");
 var grass=document.querySelectorAll(".grass");
 var finish =document.querySelector(".finish");
+var butt= document.querySelector(".restart");
+
 
 function easy()
 {
@@ -23,8 +25,8 @@ function easy()
 function medium(){
 
 
-   x=60;
-   y=40;
+   x=80;
+   y=60;
    audio3()
    startGame()
 	// body...
@@ -33,8 +35,8 @@ function medium(){
 
 function hard() {
 
-x=50;
-y=30;
+x=70;
+y=50;
 audio4()
 startGame()
 	
@@ -57,6 +59,7 @@ var no=document.querySelector(".no");
  var win=document.querySelector(".win")
  var value=document.querySelector(".value");
  var bell=document.querySelector(".bell");
+
  
  for(i=0;i<grass.length;i++)
  {
@@ -178,6 +181,8 @@ setInterval(function(){
                         score.style.display="none";
                         no.style.display="none";
                         finish.style.display="none";
+                        body.style.background="peru";
+                         butt.style.display="block";
                         gra();
 
                         hide();
@@ -213,6 +218,8 @@ setInterval(function(){
                           finish.style.display="none";
                            score.style.display="none";
                         no.style.display="none";
+                        body.style.background="peru";
+                         butt.style.display="block";
                         gra();
 						hide();
                      } 
@@ -223,9 +230,11 @@ setInterval(function(){
                   {
                   	if((bl<=star[i].offsetLeft && star[i].offsetLeft<=br)&&(bt<=star[i].offsetTop && star[i].offsetTop<=bb))
                   	{    audio1();
-                        v=v+5;
-                        finish.style.display="none";
-                        star[i].style.display="none";                      	
+                        v=v+10;
+                       
+                        star[i].style.display="none"; 
+
+
                       
                    	}
                         	                       
@@ -245,7 +254,10 @@ setInterval(function(){
                          car.style.opacity="0";
                          score.style.display="none";
                         no.style.display="none";
-                        gra();
+                        body.style.background="rgb(23, 138, 214)";
+                         finish.style.display="none";
+                         butt.style.display="block";
+                         gra();
                       	hide();
                       }
 
@@ -307,3 +319,4 @@ setInterval(function(){
           		grass[i].style.display="none";
           	}
           }
+          
